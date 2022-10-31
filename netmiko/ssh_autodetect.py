@@ -243,7 +243,7 @@ SSH_MAPPER_DICT = {
     "cisco_wlc_85": {
         "cmd": "show inventory",
         "dispatch": "_autodetect_std",
-        "search_patterns": [r"Cisco Wireless Controller"],
+        "search_patterns": [r"Cisco.*Wireless Controller"],
         "priority": 99,
     },
     "mellanox_mlnxos": {
@@ -279,6 +279,12 @@ SSH_MAPPER_DICT = {
     "flexvnf": {
         "cmd": "show system package-info",
         "search_patterns": [r"Versa FlexVNF"],
+        "priority": 99,
+        "dispatch": "_autodetect_std",
+    },
+    "cisco_viptela": {
+        "cmd": "show system status",
+        "search_patterns": [r"Viptela, Inc"],
         "priority": 99,
         "dispatch": "_autodetect_std",
     },
